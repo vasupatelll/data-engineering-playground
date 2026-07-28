@@ -1,0 +1,7 @@
+SELECT
+    pro.project_id,
+    ROUND(AVG(exp.experience_years)::NUMERIC, 2) AS average_years
+FROM Project pro
+JOIN Employee exp
+    ON pro.employee_id = exp.employee_id
+GROUP BY 1
